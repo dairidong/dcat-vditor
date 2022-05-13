@@ -9,15 +9,7 @@ use Dcat\Admin\Support\JavaScript;
 
 class Vditor extends Field
 {
-    protected $view = 'vditor::index';
-
-    protected static $js = [
-
-    ];
-
-    protected static $css = [
-
-    ];
+    protected $view = 'dcat-vditor::index';
 
     /**
      * 编辑器配置.
@@ -126,6 +118,7 @@ class Vditor extends Field
     {
         $this->options['placeholder'] = $this->placeholder();
         $this->options['value'] = $this->value;
+        $this->options['cdn'] = admin_asset('vendor/dcat-admin-extensions/jatdung/dcat-vditor');
 
         if (empty($this->options['upload']['url'])) {
             $this->options['upload']['url'] = $this->defaultImageUploadUrl();
